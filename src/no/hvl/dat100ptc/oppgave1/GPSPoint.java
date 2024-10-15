@@ -4,7 +4,10 @@ import no.hvl.dat100ptc.TODO;
 
 public class GPSPoint {
 
-	// TODO - objektvariable
+	private int time;
+	private double latitude;
+	private double longitude;
+	private double elevation;
 	
 	private int time;
 	private double latitude;
@@ -13,23 +16,23 @@ public class GPSPoint {
 	
 	public GPSPoint(int time, double latitude, double longitude, double elevation) {
 
-		// TODO - konstruktur
-		this.time = time;
-	    this.latitude = latitude;
-	    this.longitude = longitude;
-	    this.elevation = elevation;
-	
+		this.time = time;	
+		this.latitude = latitude;
+		this.longitude = longitude;
+		this.elevation = elevation;
+		
 	}
 
 	// TODO - get/set metoder
 	public int getTime() {
+		
 		return time;
-			
+		
 	}
 
 	public void setTime(int time) {
 				
-		this.time = time;
+		this.time = time; 
 		
 	}
 
@@ -53,32 +56,27 @@ public class GPSPoint {
 
 	public void setLongitude(double longitude) {
 		
-		
-		
-		
 		this.longitude = longitude;
 		
 	}
 
 	public double getElevation() {
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return elevation;
 		
 	}
 
 	public void setElevation(double elevation) {
 		
-		throw new UnsupportedOperationException(TODO.method());
+		this.elevation = elevation;
 		
 	}
 	
 	public String toString() {
 		
-		String str;
+		String str = time + " (" + latitude + "," + longitude + ") " + elevation + "\n";
+		return str;
 		
-		throw new UnsupportedOperationException(TODO.method());
-
-		// TODO
 		
 	}
 }
