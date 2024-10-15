@@ -21,8 +21,12 @@ public class GPSData {
 	protected boolean insertGPS(GPSPoint gpspoint) {
 
 		boolean inserted = false;
+<<<<<<< Updated upstream
 		
 		if (antall < gpspoints.length) {
+=======
+		if(antall < gpspoints.length) {
+>>>>>>> Stashed changes
 			gpspoints[antall] = gpspoint;
 			antall++;
 			inserted = true;
@@ -33,9 +37,17 @@ public class GPSData {
 
 	public boolean insert(String time, String latitude, String longitude, String elevation) {
 
+<<<<<<< Updated upstream
 		GPSPoint gpspoint;
 
 		gpspoint = GPSDataConverter.convert(time, latitude, longitude, elevation);
+=======
+		GPSPoint gpspoint = GPSDataConverter.convert(time, latitude, longitude, elevation);
+		
+		return insertGPS(gpspoint);
+		
+		
+>>>>>>> Stashed changes
 
 		return insertGPS(gpspoint);
 		
@@ -43,6 +55,7 @@ public class GPSData {
 
 	// Fikse så output er lik oppgave?
 	public void print() {
+<<<<<<< Updated upstream
 		
 		System.out.println("====== GPS Data - Start ======");
 		for (int n = 0; n < antall; n++) {
@@ -50,5 +63,18 @@ public class GPSData {
 			System.out.print(point.toString());
 		}
 		System.out.println("====== GPS Data - Start ======");
+=======
+
+		System.out.println("====== GPS Data - START ======");
+		
+		for (int i = 0; i < antall; i++) {
+			System.out.print(gpspoints[i].toString());
+		}
+		
+		System.out.println("====== GPS Data - SLUTT ======");
+
+
+		// TODO 
+>>>>>>> Stashed changes
 	}
 }
