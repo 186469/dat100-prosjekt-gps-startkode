@@ -9,6 +9,7 @@ public class GPSPoint {
 	private double longitude;
 	private double elevation;
 	
+	
 	public GPSPoint(int time, double latitude, double longitude, double elevation) {
 
 		this.time = time;	
