@@ -67,10 +67,12 @@ public class GPSPoint {
 		this.elevation = elevation;
 		
 	}
-	//Fiks at det skrives ut 1 istedet for 0 oppgave 2c.
+	
 	public String toString() {
 		
 		String str = time + " (" + latitude + "," + longitude + ") " + elevation + "\n";
 		return str;
+		
+		
 	}
 }
