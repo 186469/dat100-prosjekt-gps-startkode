@@ -2,6 +2,8 @@ package no.hvl.dat100ptc.oppgave3;
 
 import static java.lang.Math.*;
 
+import javax.swing.JOptionPane;
+
 import no.hvl.dat100ptc.oppgave1.GPSPoint;
 import no.hvl.dat100ptc.TODO;
 
@@ -24,7 +26,7 @@ public class GPSUtils {
 
 	public static double findMin(double[] da) {
 
-		double min;
+		double min = da[0];
 
 		min = da[0];
 		
@@ -49,8 +51,7 @@ public class GPSUtils {
 
 	public static double[] getLongitudes(GPSPoint[] gpspoints) {
 
-		
-		double[] longitudes = new double[gpspoints.length];
+		double[]longitudes = new double[gpspoints.length];
 		
 		for (int i = 0; i < gpspoints.length; i++) {
 			longitudes[i] = gpspoints[i].getLongitude();
@@ -61,7 +62,7 @@ public class GPSUtils {
 	private static final int R = 6371000; // jordens radius
 
 	public static double distance(GPSPoint gpspoint1, GPSPoint gpspoint2) {
-
+		
 		double d;
 		double latitude1, longitude1, latitude2, longitude2;
 
@@ -90,17 +91,16 @@ public class GPSUtils {
 				Math.cos(phi1) * Math.cos(phi2) * 
 				Math.sin(deltadelta / 2) * Math.sin(deltadelta / 2);		
 	}
-
 	private static double compute_c(double a) {
 		
 		return 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 	}
 
-	
 	public static double speed(GPSPoint gpspoint1, GPSPoint gpspoint2) {
 
-		int secs;
-		double speed;
+
+		double distance = distance(gpspoint1, gpspoint2);
+		double timeDif = gpspoint2.getTime() - gpspoint1.getTime();
 		
 		double distance = distance(gpspoint1, gpspoint2);
 		
@@ -129,7 +129,9 @@ public class GPSUtils {
 		
 	}
 	
-	private static int TEXTWIDTH = 10;
+	//får den bare til å bli blå.
+	
+	private static final int TEXTWIDTH = 10;
 
 	public static String formatDouble(double d) {
 
@@ -140,3 +142,7 @@ public class GPSUtils {
 		return str;
 	}
 }
+
+
+
+
