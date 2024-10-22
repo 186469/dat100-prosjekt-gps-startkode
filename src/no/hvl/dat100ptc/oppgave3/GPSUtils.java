@@ -98,9 +98,8 @@ public class GPSUtils {
 
 	public static double speed(GPSPoint gpspoint1, GPSPoint gpspoint2) {
 
-
-		double distance = distance(gpspoint1, gpspoint2);
-		double timeDif = gpspoint2.getTime() - gpspoint1.getTime();
+		int secs;
+		double speed;
 		
 		double distance = distance(gpspoint1, gpspoint2);
 		
