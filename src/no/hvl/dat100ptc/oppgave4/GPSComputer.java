@@ -167,7 +167,7 @@ public class GPSComputer {
 		System.out.println("=================================================");
 		
 		double distanse = totalDistance() / 1000;
-		double tid = totalTime();
+		int tid = totalTime();
 		double høydeForskjell = totalElevation();
 		double maksFart = maxSpeed() * 3.6;
 		double gjenFart = averageSpeed() * 3.6;
